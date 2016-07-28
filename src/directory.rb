@@ -8,8 +8,12 @@ class Directory
     @name = name
   end
 
+  def ==(target)
+    @name == target.name
+  end
 
   # メソッドの中身のコードを追加
   def make
+    Dir.mkdir(@name, 0700)
   end
 end
