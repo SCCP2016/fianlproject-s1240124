@@ -3,19 +3,16 @@ require_relative '../src/directory'
 
 class DirRepository
   # 仕様を見てコードを追加
-  attr_reader :dir_name, :header, :format, :max
+  attr_reader :command
 
   # 仕様を見てコードを追加
-  def initialize(dir_name, header, format, max)
-    @dir_name = dir_name
-    @header = header
-    @format = format
-    @max = max
+  def initialize(command)
+    @command = command
   end
 
   def create_directories
 
-    (1..@max).map{|n| Directory.new(@header + sprintf("%0#{@format}d", n))}
+    (1..@command).map{|n| Directory.new(@command + sprintf("%0#{@command}d", n))}
 
   end
 
